@@ -21,7 +21,11 @@ func NewHttpProxy(target string) (*HTTPProxy, error) {
 
 func (h *HTTPProxy) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	h.proxy.ServeHTTP(w, r)
-	fmt.Fprintf(w, "Hello world!")
+	n, err := fmt.Fprintln(w, "Hello world!!!")
+	if err != nil {
+		return
+	}
+	fmt.Println(n)
 }
 
 func main() {
