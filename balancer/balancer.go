@@ -1,17 +1,12 @@
 package balancer
 
-import (
-	"net/http/httputil"
-	"sync"
-)
-
-type HTTPProxy struct {
-	hostMap map[string]*httputil.ReverseProxy
-	lb      balancer.Balancer
-
-	sync.RWMutex // protect alive
-	alive        map[string]bool
-}
+//type HTTPProxy struct {
+//	hostMap map[string]*httputil.ReverseProxy
+//	lb      balancer.Balancer
+//
+//	sync.RWMutex // protect alive
+//	alive        map[string]bool
+//}
 
 type Balancer interface {
 	Add(string)

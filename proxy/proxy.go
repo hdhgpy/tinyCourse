@@ -65,3 +65,5 @@ func NewHTTPProxy(targetHosts []string, algorithm string) (*HTTPProxy, error) {
 		alive:   alive,
 	}, nil
 }
+
+// 看到这里了，学习了 http.Request   url.Parse  http.CanonicalHeaderKey  url.Url 等结构和操作
